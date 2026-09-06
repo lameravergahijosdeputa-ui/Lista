@@ -101,139 +101,103 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px;
-      margin-bottom: 2.5rem;
+      gap: 1rem;
     }
 
-    .card {
-      background: rgba(15, 25, 45, 0.6);
-      border: 1px solid rgba(0, 229, 255, 0.2);
-      border-left: 3px solid var(--prime-green);
-      padding: 0.8rem 1rem;
-      border-radius: 4px;
-      transition: all 0.2s ease;
+    /* Pestaña Bloqueada (Overlay) */
+    .block-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(5, 8, 17, 0.98);
+      backdrop-filter: blur(12px);
+      z-index: 999999;
       display: flex;
+      justify-content: center;
       align-items: center;
+      padding: 1.5rem;
     }
 
-    .card:hover {
-      transform: translateY(-2px);
-      border-color: var(--prime-green);
-      box-shadow: 0 0 12px var(--prime-glow);
-      background: rgba(0, 255, 102, 0.08);
+    .block-card {
+      max-width: 500px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 2px solid var(--warning-red);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255, 0, 85, 0.4);
     }
 
-    .card-number {
-      font-size: 0.75rem;
-      color: var(--cyber-blue);
-      margin-right: 10px;
-      font-family: monospace;
+    .block-card h2 {
+      color: var(--warning-red);
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 8px rgba(255, 0, 85, 0.6);
     }
 
-    .card-name {
-      font-weight: 600;
+    .block-card p {
       color: var(--text-main);
-    }
-
-    .notice {
-      background: rgba(255, 0, 85, 0.08);
-      border: 1px solid var(--warning-red);
-      border-radius: 8px;
-      padding: 1rem;
-      text-align: center;
-      color: #ffb3c6;
-      font-size: 0.95rem;
+      font-size: 1.1rem;
       margin-bottom: 2rem;
-      box-shadow: 0 0 10px rgba(ff, 0, 85, 0.2);
     }
 
-    .notice strong {
-      color: #ffffff;
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 1.5rem;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .author {
-      color: var(--prime-green);
+    .copy-btn {
+      background: transparent;
+      color: var(--cyber-blue);
+      border: 1px solid var(--cyber-blue);
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
       font-weight: bold;
-      text-shadow: 0 0 5px var(--prime-glow);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+    }
+
+    .copy-btn:hover {
+      background: var(--cyber-blue);
+      color: var(--bg-color);
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <h1>Lista De Roles Ocupados</h1>
-      <div class="subtitle">Base de Datos // Registro Multiversal</div>
-    </header>
-
-    <div class="grid">
-      <div class="card"><span class="card-number">#01</span><span class="card-name">Blue editz: Goku</span></div>
-      <div class="card"><span class="card-number">#02</span><span class="card-name">Gogeta shallot</span></div>
-      <div class="card"><span class="card-number">#03</span><span class="card-name">Vegito</span></div>
-      <div class="card"><span class="card-number">#04</span><span class="card-name">shadow</span></div>
-      <div class="card"><span class="card-number">#05</span><span class="card-name">sonic</span></div>
-      <div class="card"><span class="card-number">#06</span><span class="card-name">Anos</span></div>
-      <div class="card"><span class="card-number">#07</span><span class="card-name">Vegeta</span></div>
-      <div class="card"><span class="card-number">#08</span><span class="card-name">Broly</span></div>
-      <div class="card"><span class="card-number">#09</span><span class="card-name">Goku BLack</span></div>
-      <div class="card"><span class="card-number">#10</span><span class="card-name">silver</span></div>
-      <div class="card"><span class="card-number">#11</span><span class="card-name">Sung jinwo</span></div>
-      <div class="card"><span class="card-number">#12</span><span class="card-name">Kangwoo</span></div>
-      <div class="card"><span class="card-number">#13</span><span class="card-name">Sukuna</span></div>
-      <div class="card"><span class="card-number">#14</span><span class="card-name">Naruto,broly</span></div>
-      <div class="card"><span class="card-number">#15</span><span class="card-name">Meguma</span></div>
-      <div class="card"><span class="card-number">#16</span><span class="card-name">Gohan</span></div>
-      <div class="card"><span class="card-number">#17</span><span class="card-name">Cumber</span></div>
-      <div class="card"><span class="card-number">#18</span><span class="card-name">Hearts</span></div>
-      <div class="card"><span class="card-number">#19</span><span class="card-name">Hit</span></div>
-      <div class="card"><span class="card-number">#20</span><span class="card-name">super 17</span></div>
-      <div class="card"><span class="card-number">#21</span><span class="card-name">bardock</span></div>
-      <div class="card"><span class="card-number">#22</span><span class="card-name">kira</span></div>
-      <div class="card"><span class="card-number">#23</span><span class="card-name">Zero Two</span></div>
-      <div class="card"><span class="card-number">#24</span><span class="card-name">Kauriko Waguri</span></div>
-      <div class="card"><span class="card-number">#25</span><span class="card-name">Inuyasha</span></div>
-      <div class="card"><span class="card-number">#26</span><span class="card-name">Black</span></div>
-      <div class="card"><span class="card-number">#27</span><span class="card-name">Sisuka</span></div>
-      <div class="card"><span class="card-number">#28</span><span class="card-name">Gojo</span></div>
-      <div class="card"><span class="card-number">#29</span><span class="card-name">Topoh</span></div>
-      <div class="card"><span class="card-number">#30</span><span class="card-name">Madara</span></div>
-      <div class="card"><span class="card-number">#31</span><span class="card-name">Ynuyasha</span></div>
-      <div class="card"><span class="card-number">#32</span><span class="card-name">Eren</span></div>
-      <div class="card"><span class="card-number">#33</span><span class="card-name">Tomioka</span></div>
-      <div class="card"><span class="card-number">#34</span><span class="card-name">minato</span></div>
-      <div class="card"><span class="card-number">#35</span><span class="card-name">sung</span></div>
-      <div class="card"><span class="card-number">#36</span><span class="card-name">profilybfb</span></div>
-      <div class="card"><span class="card-number">#37</span><span class="card-name">Mitsuri</span></div>
-      <div class="card"><span class="card-number">#38</span><span class="card-name">Meguro bachira</span></div>
-      <div class="card"><span class="card-number">#39</span><span class="card-name">Kikiu</span></div>
-      <div class="card"><span class="card-number">#40</span><span class="card-name">Shinobu</span></div>
-      <div class="card"><span class="card-number">#41</span><span class="card-name">Akaza</span></div>
-      <div class="card"><span class="card-number">#42</span><span class="card-name">KUze</span></div>
-      <div class="card"><span class="card-number">#43</span><span class="card-name">Alya</span></div>
-      <div class="card"><span class="card-number">#44</span><span class="card-name">Michi</span></div>
-      <div class="card"><span class="card-number">#45</span><span class="card-name">P-47</span></div>
-      <div class="card"><span class="card-number">#46</span><span class="card-name">C-137</span></div>
-      <div class="card"><span class="card-number">#47</span><span class="card-name">Chichi</span></div>
-      <div class="card"><span class="card-number">#48</span><span class="card-name">Rouse</span></div>
+  <!-- Pestaña Permanente -->
+  <div class="block-overlay">
+    <div class="block-card">
+      <h2>Página Cerrada</h2>
+      <p>Motivos: Michi ya no partisipa más</p>
+      <button class="copy-btn" onclick="copyList()">Copiar última lista</button>
     </div>
-
-    <div class="notice">
-      Si falta el tuyo, comunícate con la admine <strong>michi</strong> (admin más activa) para que te agreguen en la lista.
-    </div>
-
-    <footer>
-      Pagina creada por <span class="author">AlyaThe56</span>
-    </footer>
   </div>
 
+  <div class="container">
+    <header>
+      <h1>Lista de Roles Ocupados</h1>
+      <div class="subtitle">Rick Prime P-47</div>
+    </header>
+    <div class="grid" id="roles-list">
+      <!-- Contenido de la lista -->
+    </div>
+  </div>
+
+  <script>
+    function copyList() {
+      const listContent = document.getElementById('roles-list').innerText;
+      navigator.clipboard.writeText(listContent).then(() => {
+        alert('Última lista copiada al portapapeles.');
+      }).catch(() => {
+        alert('Error al copiar la lista.');
+      });
+    }
+  </script>
 </body>
 </html>
